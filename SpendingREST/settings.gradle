@@ -1,0 +1,3 @@
+rootProject.name = 'SpendingREST'
+
+includeFlat 'SpendJPA'
