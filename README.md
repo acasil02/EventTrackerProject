@@ -15,7 +15,7 @@ Some lessons learned was mainly on how to create a new spending of the users cho
 <tr>
 <th>Return Type</th>
 <th>HTTP Method</th>
-<th>URI</th>
+<th>URL</th>
 <th>Request Body</th>
 <th>Purpose</th>
 </tr>
