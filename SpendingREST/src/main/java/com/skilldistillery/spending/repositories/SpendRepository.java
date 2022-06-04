@@ -6,4 +6,6 @@ import com.skilldistillery.spending.entities.Spend;
 
 public interface SpendRepository extends JpaRepository<Spend, Integer> {
 
+//	List<Spend> findBySpend_Id(int spendId);
+
 }
