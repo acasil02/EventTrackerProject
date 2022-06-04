@@ -41,7 +41,6 @@ public class SpendController {
 		return spendSvc.show(id);
 	}
 
-	// TODO
 	@PostMapping("spending")
 	public Spend create(@RequestBody Spend spend, HttpServletResponse res) {
 		if (spend != null) {
