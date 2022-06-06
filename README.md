@@ -8,7 +8,7 @@ This project is about being able to have a list of spendings you have. The Progr
 
 Some lessons learned was mainly on how to create a new spending of the users choice.
 
-## Postman
+## REST API Reference
 
 <table>
 <thead>
