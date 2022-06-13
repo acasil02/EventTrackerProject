@@ -3,10 +3,11 @@
 ## Overview
 
 This project is about being able to have a list of spendings you have. The Program will display all, retrieve one, create, update, and delete a spending of the users choice.
+This project also included JavaScript to load all current list for the program, create, delete, and update all within the same webpage.
 
 ## Lessons Learned
 
-Some lessons learned was mainly on how to create a new spending of the users choice.
+Some lessons learned was mainly on how to create a new spending of the users choice. Other lessons i have also learned was to properly place and correctly the javascript methods to work and display all information.
 
 ## REST API Reference
 
@@ -24,7 +25,7 @@ Some lessons learned was mainly on how to create a new spending of the users cho
 <tr>
 <td>List&lt;Spending&gt;</td>
 <td>GET</td>
-<td>http://localhost:8083/api/spending</td>
+<td>http://localhost:8083/api/spendings</td>
 <td></td>
 <td>List</td>
 </tr>
@@ -68,6 +69,7 @@ Some lessons learned was mainly on how to create a new spending of the users cho
 ## Technologies/Skills Used
 
 -   Java
+-   JavaScript
 -   Git
 -   Terminal
 -   Java

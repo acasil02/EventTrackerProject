@@ -22,7 +22,7 @@ public class SpendServiceImpl implements SpendService {
 	private SpendRepository spendRepo;
 
 	@Override
-	public List<Spend> index() {
+	public List<Spend> getAllExpenses() {
 		return spendRepo.findAll();
 	}
 
@@ -52,7 +52,7 @@ public class SpendServiceImpl implements SpendService {
 			spend1.setGroceries(spend.getGroceries());
 			spend1.setGas(spend.getGas());
 			spendRepo.save(spend1);
-			return spend1;
+			return spend1; 
 		}
 		return null;
 	}
@@ -63,4 +63,11 @@ public class SpendServiceImpl implements SpendService {
 		return !spendRepo.existsById(spendId);
 	}
 
+//	@Override
+//	public List<Spend> getSpendList(int spendId) {
+//		if (!spendRepo.existsById(spendId)) {
+//			return null;
+//		}
+//		return spendRepo.findBySpend_Id(spendId);
+//	}
 }

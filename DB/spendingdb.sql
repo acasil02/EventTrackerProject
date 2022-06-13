@@ -21,7 +21,7 @@ USE `spendingdb` ;
 DROP TABLE IF EXISTS `spend` ;
 
 CREATE TABLE IF NOT EXISTS `spend` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `bills` DOUBLE NULL,
   `groceries` DOUBLE NULL,
@@ -47,6 +47,11 @@ START TRANSACTION;
 USE `spendingdb`;
 INSERT INTO `spend` (`id`, `name`, `bills`, `groceries`, `gas`) VALUES (1, 'June', 1000, 500, 100);
 INSERT INTO `spend` (`id`, `name`, `bills`, `groceries`, `gas`) VALUES (2, 'July', 3567, 355, 463);
+INSERT INTO `spend` (`id`, `name`, `bills`, `groceries`, `gas`) VALUES (3, 'January', 3525, 2362, 2362);
+INSERT INTO `spend` (`id`, `name`, `bills`, `groceries`, `gas`) VALUES (4, 'February', 2352, 231, 1245);
+INSERT INTO `spend` (`id`, `name`, `bills`, `groceries`, `gas`) VALUES (5, 'March', 214, 252, 235);
+INSERT INTO `spend` (`id`, `name`, `bills`, `groceries`, `gas`) VALUES (6, 'April', 241, 123, 125);
+INSERT INTO `spend` (`id`, `name`, `bills`, `groceries`, `gas`) VALUES (7, 'May', 523, 1241, 120);
 
 COMMIT;
 

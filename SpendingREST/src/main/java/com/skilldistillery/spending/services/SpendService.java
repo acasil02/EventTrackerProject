@@ -6,8 +6,8 @@ import com.skilldistillery.spending.entities.Spend;
 
 public interface SpendService {
 
-	List<Spend> index();
-	
+	List<Spend> getAllExpenses();
+
 	Spend show(int spendId);
 
 	Spend createSpend(Spend spend);
@@ -15,5 +15,9 @@ public interface SpendService {
 	Spend update(int spendId, Spend spend);
 
 	public boolean deleteSpend(int spendId);
+
+//	List<Spend> findAll(int spendId);
+
+//	List<Spend> getSpendList(int spendId);
 
 }

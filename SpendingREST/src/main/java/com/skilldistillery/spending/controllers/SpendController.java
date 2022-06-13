@@ -2,6 +2,7 @@ package com.skilldistillery.spending.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +25,9 @@ public class SpendController {
 	@Autowired
 	private SpendService spendSvc;
 
-	@Autowired
-	private SpendService spendServ;
-
-	@GetMapping("spending")
-	public List<Spend> index() {
-		return spendServ.index();
+	@GetMapping("spendings")
+	public List<Spend> showAllExpenses() {
+		return spendSvc.getAllExpenses();
 	}
 
 	@RequestMapping(path = "spending/{id}")
@@ -83,5 +81,26 @@ public class SpendController {
 		}
 		return deleted;
 	}
+
+//	@PostMapping(path = "spending")
+//	public Spend addSpend(Spend spend, HttpServletResponse res, HttpServletRequest req) {
+//		try {
+//			spend = spendSvc.createSpend(spend);
+//			res.setStatus(201);
+//			StringBuffer url = req.getRequestURL();
+//		} catch (Exception e) {
+//
+//		}
+//		return spendSvc.findAll();
+//	}
+
+//	@RequestMapping(path = "spending/{id}")
+//	public List<Spend> getSpendList(@PathVariable int spendId, HttpServletResponse res) {
+//		List<Spend> spending = spendSvc.getSpendList(spendId);
+//		if (spending == null) {
+//			res.setStatus(404);
+//		}
+//		return spending;
+//	}
 
 }
