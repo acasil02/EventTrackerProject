@@ -2,10 +2,10 @@ package com.skilldistillery.spending.controllers;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,12 +20,13 @@ import com.skilldistillery.spending.services.SpendService;
 
 @RequestMapping("api")
 @RestController
+@CrossOrigin({ "*", "http://localhost:4203" })
 public class SpendController {
 
 	@Autowired
 	private SpendService spendSvc;
 
-	@GetMapping("spendings")
+	@GetMapping("spending")
 	public List<Spend> showAllExpenses() {
 		return spendSvc.getAllExpenses();
 	}
@@ -71,7 +72,7 @@ public class SpendController {
 		Boolean deleted = false;
 		try {
 			deleted = spendSvc.deleteSpend(spendId);
-			if (spendSvc.deleteSpend(spendId)) {
+			if (deleted) {
 				res.setStatus(204);
 			} else {
 				res.setStatus(404);

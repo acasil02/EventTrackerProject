@@ -1,0 +1,107 @@
+<h1>Spending Tracker</h1>
+
+<!-- TITLE WITH NUMBER OF SPENDS -->
+<h1>{{ name }} <span [ngClass]="checkSpendLevel()"> {{ getNumSpend() }}</span></h1>
+
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Month</th>
+      <th>Bills</th>
+      <th>Groceries</th>
+      <th>Gas</th>
+      <!-- <th>Completed</th> -->
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let spend of spendList">
+      <td class="spend" (click)="displaySpend(spend)">{{ spend.name }}</td>
+      <td class="spend" (click)="displaySpend(spend)">${{ spend.bills }}</td>
+      <td class="spend" (click)="displaySpend(spend)">${{ spend.groceries }}</td>
+      <td class="spend" (click)="displaySpend(spend)">${{ spend.gas }}</td>
+
+      <!-- DELETE SPEND -->
+      <!-- <button class="btn btn-primary" (click)="setEditSpend()">Edit</button> -->
+      <td><button class="btn btn-danger" (click)="deleteSpend(spend.id)">X</button></td>
+    </tr>
+  </tbody>
+
+  <!-- TOTAL FOR EACH  -->
+  <tr>
+    <td><div>Total:</div></td>
+    <td><div>${{getTotalBills()}}</div></td>
+    <td><div>${{getTotalGroc()}}</div></td>
+    <td><div>${{getTotalGas()}}</div></td>
+  </tr>
+</table>
+
+<!-- CREATE -->
+<h1>Add a new Expense</h1>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Month</span>
+  <input class="form-control" type="text" name="name" placeholder="" [(ngModel)]="newSpend.name">
+</div>
+
+<div class="input-group mb-3">
+<span class="input-group-text" id="basic-addon1">Bills</span>
+<input class="form-control" type="text" name="bills" placeholder="Bills" [(ngModel)]="newSpend.bills">
+</div>
+
+<div class="input-group mb-3">
+<span class="input-group-text" id="basic-addon1">Groceries</span>
+<input class="form-control" type="text" name="groceries" placeholder="Groceries" [(ngModel)]="newSpend.groceries">
+</div>
+
+<div class="input-group mb-3">
+<span class="input-group-text" id="basic-addon1">Gas</span>
+<input class="form-control" type="text" name="gas" placeholder="Gas" [(ngModel)]="newSpend.gas">
+</div>
+<button class="btn btn-primary" (click)="addSpend(newSpend)">Add Expense</button><br><hr>
+
+<!-- DISPLAY AFTER SELECT -->
+<div *ngIf="selected && !editSpend">
+  <p>ID: {{ selected.id }}</p>
+  <p>Month: {{ selected.name }}</p>
+  <p>Bills: {{ selected.bills }}</p>
+  <p>Groceries: {{ selected.groceries }}</p>
+  <p>Gas: {{ selected.gas }}</p>
+  <button class="btn btn-primary" (click)="setEditSpend()">Edit</button>
+  <button class="btn btn-primary" (click)="displayTable()">Back</button>
+</div>
+
+<!-- EDIT -->
+<div *ngIf="editSpend">
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Name</span>
+    <input class="form-control" type="text" name="name" [(ngModel)]="editSpend.name">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Bills</span>
+    <input class="form-control" type="text" name="bills" [(ngModel)]="editSpend.bills">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Groceries</span>
+    <input class="form-control" type="text" name="groceries" [(ngModel)]="editSpend.groceries">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Gas</span>
+    <input class="form-control" type="text" name="gas" [(ngModel)]="editSpend.gas">
+  </div>
+
+  <button class="btn btn-danger" (click)="updateSpend(editSpend)">Save</button>
+  <button class="btn btn-primary"(click)="editSpend = null">Cancel</button>
+</div>
+
+
+
+<!-- <ul>
+  <li *ngFor="let spend of spendList">{{spend.name}}</li>
+</ul> -->
+

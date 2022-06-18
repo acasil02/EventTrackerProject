@@ -1,0 +1,10 @@
+tr.compelted > td {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.completed > .task {
+  text-decoration: line-through;
+  color: gray;
+}
+
