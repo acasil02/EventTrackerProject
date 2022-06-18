@@ -2,12 +2,11 @@
 
 ## Overview
 
-This project is about being able to have a list of spendings you have. The Program will display all, retrieve one, create, update, and delete a spending of the users choice.
-This project also included JavaScript to load all current list for the program, create, delete, and update all within the same webpage.
+This project is about being able to have a list of spendings you have. The Program will display all, retrieve one, create, update, and delete a spending of the users choice. This project also included JavaScript to load all current list for the program, create, delete, and update all within the same webpage. The third week was about getting all the visual studio front end to have fully functional crud to give the user access to it using a website.
 
 ## Lessons Learned
 
-Some lessons learned was mainly on how to create a new spending of the users choice. Other lessons i have also learned was to properly place and correctly the javascript methods to work and display all information.
+Some lessons learned was mainly on how to create a new spending of the users choice. Other lessons i have also learned was to properly place and correctly the javascript methods to work and display all information. The lessons learned was about how to properly link functions from different sides of files and being able to access and display them on a front end site for the user to interact with.
 
 ## REST API Reference
 
@@ -70,6 +69,7 @@ Some lessons learned was mainly on how to create a new spending of the users cho
 
 -   Java
 -   JavaScript
+-   Visual Studio Code
 -   Git
 -   Terminal
 -   Java
